@@ -1,0 +1,200 @@
+/* Estilos base para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-image: url("https://trilce.ucv.edu.pe/images/1.png");
+    background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Estilos para el logo */
+.logo a {
+    text-transform: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+.logo h1 {
+    
+    color: #ffffff;
+}
+
+h1{
+ color: white;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #B03A2E; /* Rojo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los elementos en dispositivos móviles */
+}
+
+.nav-links li {
+    margin-left: 20px;
+    margin-top: 10px; /* Añadido para espaciado vertical en móviles */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+body .titulo {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.descripcion {
+    font-size: 18px;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #1A5276; /* Color de fondo del pie de página */
+    color: #ffffff; /* Color del texto del pie de página */
+    padding: 20px;
+    text-align: center;
+    z-index: 3;
+}
+
+footer a {
+    color: #ffffff; /* Color del enlace en el pie de página */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Cambia la dirección del flex a columna en móviles */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        align-items: flex-start; /* Alinea los enlaces al inicio */
+    }
+
+    .nav-links li {
+        margin-left: 0; /* Elimina el margen izquierdo */
+        margin-top: 10px; /* Añade un margen superior para espaciado */
+    }
+
+    .contenedor {
+        padding: 20px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .titulo {
+        font-size: 28px; /* Reduce el tamaño de la fuente del título */
+    }
+
+    .descripcion {
+        font-size: 16px; /* Reduce el tamaño de la fuente de la descripción */
+    }
+}
+
+.cursos_f {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(236, 236, 240);
+}
+
+.row{
+    border-color: #ffffff00;
+    color: rgb(13, 0, 133);
+
+}
+.MisCursos {
+   color: white;
+}
+
+
+
+
+
+.cursos_f h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cursos_lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.curso {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+    padding: 2%;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1 1 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #3af800;
+    font-size: 35px;
+}
+
+.curso:hover {
+    background-color: #3af800;
+}
+
+.divboton {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.botonC {
+    width: 15%;
+    background-color: #3af800;
+    padding: 1%;
+    border-color: #f0f0f000;
+    border-radius: 5px;
+    border: none;
+    color: #0d00be;
+}
+
+.botonC:hover {
+    box-shadow: 0px 0px 12px #3af800;
+    font-size: 15px;
+}

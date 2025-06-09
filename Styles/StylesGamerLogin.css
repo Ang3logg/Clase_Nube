@@ -1,0 +1,143 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0); /* Fondo degradado */
+    color: #fff; /* Texto blanco */
+    line-height: 1.6;
+    overflow-x: hidden; /* Para evitar desplazamientos horizontales */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo contenedor */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra */
+    overflow: hidden; /* Para ocultar sombra en bordes redondeados */
+    position: relative;
+}
+
+.formulario {
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00c5ff; /* Color de título celeste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    border-bottom: 2px solid #00c5ff; /* Línea celeste bajo el título */
+    padding-bottom: 10px;
+}
+
+.campos {
+    margin-top: 20px;
+}
+
+.campo__usuario,
+.campo__contraseña {
+    margin-bottom: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+a {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00c5ff; /* Celeste */
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 197, 255, 0.5); /* Sombra celeste al enfocar */
+}
+
+input[type="submit"] {
+    background-color: #7a00cc; /* Púrpura */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="submit"]:hover,
+a:hover {
+    background-color: #5d00b2; /* Púrpura más oscuro al hover */
+    transform: translateY(-2px); /* Efecto de levantamiento */
+}
+
+a {
+    text-decoration: none;
+    color: #00c5ff; /* Color de enlaces celeste */
+    font-size: 0.9rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Efecto de sombra en el contenedor del chatbot */
+.chatbot df-messenger {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    border-radius: 10px;
+}
+
+/* Personalización del formulario de chatbot */
+.chatbot df-messenger {
+    --df-messenger-bot-message-background: #7a00cc; /* Fondo púrpura */
+    --df-messenger-font-color-user: #fff; /* Color de texto de usuario */
+    --df-messenger-bot-message-font-color: #fff; /* Color de texto del bot */
+}

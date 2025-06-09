@@ -1,0 +1,65 @@
+
+
+.cursos_f {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: blue;
+}
+
+.cursos_f h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.cursos_lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.curso {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+    padding: 2%;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1 1 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+h2{
+    color: #3af800;
+    font-size: 35px;
+}
+
+.curso:hover {
+    background-color: #3af800;
+}
+
+.divboton{
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.botonC{
+    width: 15%;
+    background-color: #3af800;
+    padding: 1%;
+    border-color: #f0f0f000;
+    border-radius: 5px;
+    border-color: none;
+    color: #0d00be;
+
+
+}
+
+.botonC:hover{
+    box-shadow: 0px 0px 12px #3af800;
+    font-size: 15px;
+}

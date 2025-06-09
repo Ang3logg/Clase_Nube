@@ -1,0 +1,192 @@
+/* Estilos base para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+    background-image: url("https://trilce.ucv.edu.pe/images/1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Estilos para el logo */
+.logo h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #970000; /* Azul oscuro con transparencia */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px; /* Aumentamos el padding para hacer la barra más gruesa */
+    box-shadow: 0 4px 8px rgba(148, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: rgb(202, 0, 0); /* Azul oscuro sin transparencia */
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.815);
+    .logo h1 {
+        font-size: 40px; /* Aumentamos más el tamaño del texto */
+    }
+}
+
+.navbar:hover .logo h1 {
+    font-size: 40px; /* Aumentamos más el tamaño del texto */
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px; /* Aumentamos el espacio entre los elementos */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px; /* Aumentamos el tamaño del texto */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    font-size: 20.2px;
+
+    text-shadow: 0px 0px 18px #ffffff;
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.contenedor .titulo {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff; /* Rosa */
+}
+
+.contenedor .descripcion {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Estilos para la sección de cursos */
+.cursos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.curso {
+    background-color: #80cbc4; /* Verde azulado */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.MisCursos{
+    color: #ffffff;
+}
+
+.curso:hover {
+    background-color: #4db6ac; /* Verde azulado más oscuro */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.curso h2 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.curso p {
+    color: #ccc;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #1a237e; /* Azul oscuro */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Efecto de desplazamiento del chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Animación para los botones y efectos de hover */
+.botonC {
+    width: 100%;
+    background-color: #ff4081; /* Rosa */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+}
+
+.botonC:hover {
+    background-color: #ff80ab; /* Rosa más claro */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.5);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .contenedor {
+        padding: 20px;
+    }
+
+    .curso {
+        flex: 1 1 45%;
+    }
+}

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "monserat";
+    src: url("../Styles/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "dune";
+    src: url("../Styles/fonts/Dune_Rise.ttf") format("truetype");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "eart";
+    src: url("../Styles/fonts/earthorbiter.ttf") format("truetype");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "arcade";
+    src: url("../Styles/fonts/ARCADE_N.TTF") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "minecraft";
+    src: url("../Styles/fonts/Minecrafter.Alt.ttf") format("truetype");
+}

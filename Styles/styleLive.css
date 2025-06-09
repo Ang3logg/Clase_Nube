@@ -1,0 +1,227 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    padding: 30px; /* Aumentamos el padding para más espacio interno */
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    animation: changeColor 5s linear infinite alternate; /* Animación de cambio de color */
+}
+
+@keyframes changeColor {
+    0% {
+        color: #ff00ff; /* Color inicial */
+    }
+    50% {
+        color: #00ffff; /* Color intermedio */
+    }
+    100% {
+        color: #ff00ff; /* Color final */
+    }
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre elementos del formulario */
+    justify-content: center;
+    margin-bottom: 30px; /* Espacio inferior */
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.button-group {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+form div {
+    flex: 1 1 calc(50% - 20px); /* Ajuste de tamaño flexible con espacio entre elementos */
+    margin-bottom: 20px; /* Espacio inferior entre elementos */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+form div {
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 20px; /* Aumentamos el espacio inferior */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+select, button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0);
+}
+
+select:focus, button:hover {
+    outline: none;
+    background-color: #00ffff;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+button {
+    cursor: pointer;
+    background-color: #00ffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #00cccc;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+#videoContainer {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px; /* Aumentamos el espacio inferior */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+#liveVideo {
+    width: 100%;
+    display: block;
+    background-color: #000;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.record-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumentamos el espacio entre botones */
+    margin-top: 30px; /* Aumentamos el espacio superior */
+    animation: slideInFromRight 1s ease-out;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.record-controls button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #ff00ff;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record-controls button:hover {
+    background-color: #ff00cc;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+.message {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    display: none;
+    animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    form div {
+        flex: 0 0 100%;
+    }
+}

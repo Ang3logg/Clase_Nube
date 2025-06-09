@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - ClaseNube UCV</title>
+    <link rel="stylesheet" href="../Styles/stylesRC.css">
+    <link rel="stylesheet" href="inicio.html">
+    <link rel="stylesheet" href="clasenube.html">
+    
+</head>
+<body>
+    
+    <div class="contenedor">
+        <h1 class="titulo">Recuperar Contraseña</h1>
+        <div class="centrado">
+            <div class="formulario">   
+                <h2>Ingresa tus datos</h2>
+                <div class="campos">
+                    <!-- Formulario para cambiar la contraseña -->
+                    <form id="cambiarContraForm" action="../Scripts/CambiarContra.php" method="post">
+                        <div class="campo__contraseña">
+                            <input type="password" name="nueva_contrasena" placeholder="Nueva Contraseña" required>
+                        </div>
+                        <div class="campo__confirmar-contraseña">
+                            <input type="password" name="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
+                        </div>
+                        <input type="submit" value="Guardar Contraseña">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="enlaces"> 
+            <a href="login.html">Volver al inicio</a>
+        </div>
+    </div>
+
+    
+
+    <div class="chatbot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+        chat-title="Robot de Clase Nube"
+        agent-id="7526d9c7-1a5a-45b8-aa9c-f8208e3b4ff7"
+        language-code="es"
+        ></df-messenger>
+
+    </div>
+</body>
+</html>

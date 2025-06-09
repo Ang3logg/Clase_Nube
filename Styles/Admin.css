@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    background-color: #B03A2E;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo h1 {
+    margin: 0;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #b60202, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ac0000, 0 0 30px #910000, 0 0 35px #970b00b6;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #00509e, 0 0 30px #00509e, 0 0 40px #00509e, 0 0 50px #00509e, 0 0 60px #00509e, 0 0 70px #00509e;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+
+.nav-links li {
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0023be;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    color: #aaa;
+    animation: fadeIn 2s 0.5s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.AC_RAPIDO {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.AC_RAPIDO a {
+    text-decoration: none;
+    color: #fff;
+    margin: 1%;
+    text-transform: none;
+    text-decoration: none;
+    display: flex;
+    padding: 15px 30px;
+    background-color: #b40000;
+    box-shadow: 0px 0px 10px #f048487a;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.AC_RAPIDO a:hover {
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.801);
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.1);
+}
+
+.contenedorUS {
+    background-color: rgba(255, 255, 255, 0.781);
+    padding: 3%;
+    box-shadow: 0px 0px 20px #ffffffb0;
+}
+
+.titulo {
+    color: white;
+}
+
+.descripcion {
+    color: white;
+}
+
+.logo {
+    color: white;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}

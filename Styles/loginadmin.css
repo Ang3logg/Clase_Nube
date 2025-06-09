@@ -1,0 +1,173 @@
+/* Estilos base para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos para el cuerpo de la página */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: radial-gradient(circle, #000000, #0a192f, #1a2930, #121212, #1a2930, #0a192f, #000000);
+    background-size: 1000% 1000%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+    color: #ffffff;
+    transition: background-color 0.5s;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el formulario */
+.formulario {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estilos para el título del formulario */
+.titulo {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-family: dune;
+    padding: 10px;
+   
+    border-radius: 10px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(211, 211, 211, 0.753);
+    color: #ffffff; /* Color de texto blanco */
+    transition: background-color 0.3s;
+}
+
+/* Estilos para los campos de entrada */
+.campos input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: background-color 5s, box-shadow 0.3s;
+}
+
+/* Estilos para los campos de entrada en foco */
+.campos input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #ff9900; /* Color de fondo naranja */
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid #ffcc00; /* Borde naranja */
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 15px 30px;
+    margin-top: 20px;
+   
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estilos para el botón de envío al pasar el mouse */
+input[type="submit"]:hover {
+    background-color: #ffcc00; /* Color de fondo naranja más claro */
+    box-shadow: 0px 0px 15px #ffcc00; /* Sombra naranja */
+    transform: scale(1.05);
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilos para los enlaces al pasar el mouse */
+a:hover {
+    color: #ffcc00; /* Color de enlace naranja claro */
+}
+
+/* Personalización del chatbot */
+.chatbot {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
