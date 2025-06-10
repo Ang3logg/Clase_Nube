@@ -13,5 +13,6 @@
         "Profesor",
         "Sesión",
         "unidades"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

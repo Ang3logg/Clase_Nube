@@ -7,111 +7,101 @@
 
 /* Estilo para el cuerpo de la página */
 body {
-    font-family: 'Arial', sans-serif;
-    padding: 0;
-    margin: 0;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden; /* Evitar desbordamientos */
-    background: linear-gradient(45deg, #073f00, #000000, #006e12, #264b1f); /* Fondo degradado */
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; /* Animación del fondo */
-}
-
-/* Animación del fondo */
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://www.ucv.edu.pe/wp-content/uploads/2022/09/ucv-fondo-web.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Estilos para el contenedor principal */
 .contenedor {
-    max-width: 400px;
-    width: 100%;
+    max-width: 450px;
+    width: 90%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 30px #006e12;
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Estilos para el título */
 .titulo {
-    font-size: 60px;
-    color: #09ff00;
-    font-family: minecraft;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* Estilos para los campos de entrada */
 .campos {
+    margin-bottom: 25px;
+}
+
+.campo {
     margin-bottom: 20px;
 }
 
 .campos input[type="email"],
 .campos input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ffffff; /* Borde con color blanco */
-    border-radius: 5px;
+    padding: 14px 16px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
-    color: #ffffff;
+    background-color: #f9f9f9;
+    color: #333;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .campos input[type="email"]:focus,
 .campos input[type="password"]:focus {
-    border-color: #13e600; /* Color de borde al enfocar */
+    border-color: #3498db;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Estilos para el botón de envío */
 .campos input[type="submit"] {
     width: 100%;
-    background-color: #07ce00; /* Color de fondo del botón */
-    color: #ffffff;
+    background-color: #2c3e50;
+    color: white;
     border: none;
-    font-family: minecraft;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 14px;
+    margin: 20px 0 15px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 20px;
-    text-transform: uppercase;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra al botón */
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
     transition: background-color 0.3s ease;
 }
 
 .campos input[type="submit"]:hover {
-    background-color: #25df00;
-    box-shadow: 0px 0px 12px rgb(10, 255, 1) /* Color de fondo del botón al pasar el mouse */
+    background-color: #1a252f;
 }
 
 /* Estilos para los enlaces */
-.campos a {
+.enlace-olvido {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
     text-decoration: none;
-    color: #ffffff;
+    color: #7f8c8d;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
-.campos a:hover {
-    color: #33ff00; 
-  /* Color de enlace al pasar el mouse */
+.enlace-olvido:hover {
+    color: #3498db;
+    text-decoration: underline;
 }
 
 /* Estilos para el chatbot */
@@ -123,10 +113,21 @@ body {
 
 /* Personalización del chatbot */
 df-messenger {
-    --df-messenger-bot-message: #5a6168;
-    --df-messenger-button-titlebar-color: #07b66d;
-    --df-messenger-chat-background-color: #414bcc9d;
-    --df-messenger-font-color: rgb(255, 255, 255);
-    --df-messenger-send-icon: #47cc12;
-    --df-messenger-user-message: #23c910;
+    --df-messenger-bot-message: #2c3e50;
+    --df-messenger-button-titlebar-color: #2c3e50;
+    --df-messenger-chat-background-color: #f9f9f9;
+    --df-messenger-font-color: #333;
+    --df-messenger-send-icon: #2c3e50;
+    --df-messenger-user-message: #3498db;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 30px 20px;
+    }
+    
+    .titulo {
+        font-size: 24px;
+    }
 }
