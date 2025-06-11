@@ -5,7 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 include 'Config.php';  // aquí tienes la conexión $conn a MySQL
 
-$email = $_SESSION['user_id'];
+$email = $_SESSION['correo'];
+
 
 if (!$email) {
     echo 'Usuario no identificado.';
