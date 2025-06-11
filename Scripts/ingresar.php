@@ -17,6 +17,8 @@ try {
         if ($pass === $user['contraseña']) {
             session_start();
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['correo'] = $user['correo'];
+            $_SESSION['nombre'] = $user['nombre'];
             $_SESSION['authenticated'] = true;
 
             if ($user['tipo_usuario'] === 'admin') {
