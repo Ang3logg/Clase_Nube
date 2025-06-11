@@ -18,19 +18,19 @@ $usuario = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Styles/Modificar.css">
     <title>Matricular Usuario</title>
+    <link rel="stylesheet" href="../../Styles/Modificar.css">
 </head>
 <body>
     <div class="contenedor">
-        <h1>Matricula - Seleccione curso</h1>
+        <h1>Matricular Usuario - Seleccione cursos</h1>
         <form action="MatricularUsuario.php" method="post">
-            <input type="hidden" name="correo" value="<?php echo $usuario['correo']; ?>">
-            <?php include '../Admin_Scripts/listarCursos.php'; ?>
+            <input type="hidden" name="correo" value="<?php echo htmlspecialchars($usuario['correo']); ?>">
+            <?php include 'listarCursos.php'; ?>
+            <br><br>
             <input type="submit" value="Guardar">
         </form>
     </div>

@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sesion_id']) && isset
         $ffmpegOutput = shell_exec("ffmpeg -i \"$target_file\" 2>&1");
         preg_match('/Duration: (\d+:\d+:\d+\.\d+)/', $ffmpegOutput, $durationMatch);
         preg_match('/(\d+) fps/', $ffmpegOutput, $frameRateMatch);
-        $duration = isset($durationMatch[1]) ? $durationMatch[1] : 'N/A';
-        $frameRate = isset($frameRateMatch[1]) ? $frameRateMatch[1] : 'N/A';
+        $duration = $durationMatch[1] ?? 'N/A';
+        $frameRate = $frameRateMatch[1] ?? 'N/A';
 
-        // Insertar o actualizar en `videos`
+        // Insertar o actualizar en la tabla videos
         $sql = "INSERT INTO videos (sesion_id, nombre_archivo, ruta_video, duracion, frame_rate) 
                 VALUES (?, ?, ?, ?, ?)
                 ON DUPLICATE KEY UPDATE nombre_archivo = VALUES(nombre_archivo), ruta_video = VALUES(ruta_video),
@@ -36,14 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sesion_id']) && isset
         $stmt->bind_param("issss", $sesion_id, $videoFileName, $ruta, $duration, $frameRate);
         $stmt->execute();
 
-        // Ejecutar IA
+        // Ejecutar IA (análisis de video)
         $output_txt = "../../uploads/Documentos/{$videoFileName}.txt";
         $input_txt = $target_file;
         $python_path = "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python312\\python.exe";
-        $command = "{$python_path} IA.py {$input_txt} {$output_txt} 2>&1";
+        $command = "{$python_path} IA.py \"{$input_txt}\" \"{$output_txt}\" 2>&1";
         exec($command, $output, $return_code);
-
-        echo "<pre>Salida de IA.py:\n" . implode("\n", $output) . "\nCódigo de retorno: $return_code\n</pre>";
 
         if ($return_code === 0) {
             $ia_nombre = basename($output_txt);
@@ -51,11 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sesion_id']) && isset
             $stmt2 = $conn->prepare($sql_update);
             $stmt2->bind_param("si", $ia_nombre, $sesion_id);
             $stmt2->execute();
+            $stmt2->close();
 
             echo "<script>alert('Video subido y análisis generado correctamente.'); window.location.href='{$_SERVER['HTTP_REFERER']}';</script>";
         } else {
             echo "<script>alert('Error al generar el análisis: Código $return_code'); window.location.href='{$_SERVER['HTTP_REFERER']}';</script>";
         }
+
+        $stmt->close();
+        $conn->close();
     } else {
         echo "<script>alert('Error al subir el archivo de video.'); window.location.href='{$_SERVER['HTTP_REFERER']}';</script>";
     }

@@ -14,9 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sesion_id']) && isset
     $sql = "DELETE FROM materiales WHERE id = ? AND sesion_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $material_id, $sesion_id);
-    $stmt->execute();
+    
+    if ($stmt->execute()) {
+        $_SESSION['message'] = 'Material eliminado correctamente.';
+    } else {
+        $_SESSION['message'] = 'Error al eliminar el material.';
+    }
 
-    $_SESSION['message'] = 'Material eliminado correctamente.';
+    $stmt->close();
+    $conn->close();
+
     header("Location: http://localhost/ClaseNubeUCV/html/Profesor/CursoOp.php?curso_id=$curso_id");
     exit;
 } else {

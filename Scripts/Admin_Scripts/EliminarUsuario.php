@@ -1,38 +1,65 @@
 <?php
 include '../../Scripts/Config.php';
 
-session_start();
+if (isset($_GET['id'])) {
+    $usuario_id = $_GET['id'];
 
-if (isset($_SESSION['correo2'])) {
-    $correo = $_SESSION['correo2'];
-
-    // Obtener ID del usuario por su correo
-    $sql_get = "SELECT id FROM usuarios WHERE correo = ?";
-    $stmt_get = $conn->prepare($sql_get);
-    $stmt_get->bind_param("s", $correo);
-    $stmt_get->execute();
-    $result = $stmt_get->get_result();
+    // Verificar si el usuario existe
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
+    $stmt->bind_param("i", $usuario_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $usuario_id = $row['id'];
+        // Verificar si el usuario es profesor con cursos asignados
+        $stmtCursos = $conn->prepare("SELECT COUNT(*) FROM cursos WHERE profesor_id = ?");
+        $stmtCursos->bind_param("i", $usuario_id);
+        $stmtCursos->execute();
+        $stmtCursos->bind_result($cursosAsociados);
+        $stmtCursos->fetch();
+        $stmtCursos->close();
 
-        // Eliminar relaciones: primero eliminamos en otras tablas para evitar errores de FK
-        $conn->query("DELETE FROM alumnos_cursos WHERE usuario_id = $usuario_id");
-        $conn->query("DELETE FROM amigos WHERE usuario_id = $usuario_id OR amigo_id = $usuario_id");
-        $conn->query("DELETE FROM cursos WHERE profesor_id = $usuario_id"); // si fue profe
+        if ($cursosAsociados > 0) {
+            echo "<script>
+                alert('No puedes eliminar este usuario porque es profesor de uno o más cursos.');
+                window.location.href = '../Admin/ListarUsuarios.php';
+            </script>";
+            exit();
+        }
 
-        // Eliminar el usuario
-        $sql_delete = "DELETE FROM usuarios WHERE id = ?";
-        $stmt_delete = $conn->prepare($sql_delete);
-        $stmt_delete->bind_param("i", $usuario_id);
-        $stmt_delete->execute();
+        // Eliminar relaciones de amistad
+        $stmt = $conn->prepare("DELETE FROM amigos WHERE usuario_id = ? OR amigo_id = ?");
+        $stmt->bind_param("ii", $usuario_id, $usuario_id);
+        $stmt->execute();
+        $stmt->close();
+
+        // Eliminar de alumnos_cursos
+        $stmt = $conn->prepare("DELETE FROM alumnos_cursos WHERE usuario_id = ?");
+        $stmt->bind_param("i", $usuario_id);
+        $stmt->execute();
+        $stmt->close();
+
+        // Finalmente, eliminar el usuario
+        $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i", $usuario_id);
+        $stmt->execute();
+        $stmt->close();
+
+        echo "<script>
+            alert('Usuario eliminado correctamente.');
+            window.location.href = '../Admin/ListarUsuarios.php';
+        </script>";
+        exit();
+
+    } else {
+        echo "<script>
+            alert('Usuario no encontrado.');
+            window.location.href = '../Admin/ListarUsuarios.php';
+        </script>";
+        exit();
     }
-
-    header("Location: ../../html/Admin/RegistroAlumno.php");
-    exit();
 } else {
-    header("Location: ../../html/Admin/ListarUsuarios.php");
+    header("Location: ../Admin/ListarUsuarios.php");
     exit();
 }
 ?>

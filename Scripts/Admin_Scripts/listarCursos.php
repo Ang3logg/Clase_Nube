@@ -1,5 +1,5 @@
 <?php
-$correo = $_GET['correo'];
+$correo = $_GET['correo'] ?? $_POST['correo'] ?? '';
 include '../../Scripts/Config.php';
 
 // Obtener el usuario por correo
@@ -21,10 +21,9 @@ $usuario_id = $usuario['id'];
 $sql_cursos = "SELECT id, nombre_curso FROM cursos";
 $result_cursos = $conn->query($sql_cursos);
 
-echo '<input type="hidden" name="correo" value="' . htmlspecialchars($correo) . '">';
 if ($result_cursos->num_rows > 0) {
-    echo '<label for="cursos">Seleccione los cursos:</label>';
-    echo '<select name="cursos[]" id="cursos" multiple>';
+    echo '<label for="cursos">Seleccione los cursos:</label><br>';
+    echo '<select name="cursos[]" id="cursos" multiple size="5">';
     while ($curso = $result_cursos->fetch_assoc()) {
         echo '<option value="' . htmlspecialchars($curso['id']) . '">' . htmlspecialchars($curso['nombre_curso']) . '</option>';
     }
