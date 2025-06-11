@@ -7,36 +7,20 @@
     <link rel="stylesheet" href="../Styles/loginestudiante.css">
     <link rel="stylesheet" href="../Styles/fonts.css">
     <style>
-        .container {
-            max-width: 300px;
-            margin: 50px auto;
-            text-align: center;
-        }
-        .button-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .button {
-            font-size: 20px;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #e0e0e0;
-        }
-        .campo__contraseña {
+        .base-blanca {
+            width: 950px;
+            min-height: 600px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            padding: 40px 20px 30px 20px;
+            margin: 40px auto;
+            padding: 0;
             position: relative;
-        }
-        #passwordInput {
-            font-size: 20px;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
         }
         .botones-contraseña {
             display: grid;
@@ -47,19 +31,38 @@
         .boton-contraseña {
             font-size: 20px;
             padding: 10px 20px;
-            background-color: #f0f0f0;
+            background-color: #ffffff;
             border: 1px solid #ccc;
             cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
         }
         .boton-contraseña:hover {
             background-color: #e0e0e0;
         }
+        .botones-contras h2 {
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        @media (max-width: 600px) {
+            .base-blanca {
+                width: 98vw;
+                min-height: 90vh;
+                padding: 10px 2vw;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="contenedor">
-        <form class="formulario" action="../Scripts/ingresar.php" method="post">
-            <h1 class="titulo">ClaseNube UCV</h1>
+<div class="base-blanca" style="display: flex; flex-direction: row; align-items: stretch; justify-content: space-between;">
+    <div style="flex:1; display: flex; align-items: center; justify-content: center;">
+    </div>
+    <div class="contenedor" style="flex:2; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 0 40px 0;">
+        <form class="formulario" action="../Scripts/ingresar.php" method="post" style="width: 100%; max-width: 350px;">
+            <h1 class="titulo">CLASENUBE UCV</h1>
             <div class="campos">
                 <div class="campo__usuario">
                     <input
@@ -79,32 +82,73 @@
                         required
                         readonly
                     >
-                   
                 </div>
                 <input type="submit" value="Ingresar">
                 <a href="OlvidoContrasena.html">¿Olvidaste tu contraseña?</a>
             </div>
         </form>
-        <div class="botones-contras" >
-        <h2>Ingrese su contraseña</h2>
-        <div class="botones-contraseña">
-            <button class="boton-contraseña" onclick="addToPassword('1')">1</button>
-            <button class="boton-contraseña" onclick="addToPassword('2')">2</button>
-            <button class="boton-contraseña" onclick="addToPassword('3')">3</button>
-            <button class="boton-contraseña" onclick="addToPassword('4')">4</button>
-            <button class="boton-contraseña" onclick="addToPassword('5')">5</button>
-            <button class="boton-contraseña" onclick="addToPassword('6')">6</button>
-            <button class="boton-contraseña" onclick="addToPassword('7')">7</button>
-            <button class="boton-contraseña" onclick="addToPassword('8')">8</button>
-            <button class="boton-contraseña" onclick="addToPassword('9')">9</button>
-            <button class="boton-contraseña" onclick="addToPassword('0')">0</button>
-            <button class="boton-contraseña" onclick="clearPassword()">Limpiar</button>
+        <div class="botones-contras" style="width: 100%; max-width: 350px;">
+            <h2>Ingrese su contraseña</h2>
+            <div class="botones-contraseña">
+                <button class="boton-contraseña" type="button" onclick="addToPassword('1')">1</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('2')">2</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('3')">3</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('4')">4</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('5')">5</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('6')">6</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('7')">7</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('8')">8</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('9')">9</button>
+                <button class="boton-contraseña" type="button" onclick="addToPassword('0')" style="grid-column: 1;">0</button>
+                <button class="boton-contraseña" type="button" onclick="clearPassword()" style="grid-column: 2 / span 2;">Limpiar</button>
+            </div>
         </div>
     </div>
-        
-
+    <div class="columna-derecha">
+    <div class="carrusel-imagenes">
+        <img src="../Icon/ILogin1.svg" class="carrusel-img active" alt="Imagen 1">
+        <img src="../Icon/ILogin2.svg" class="carrusel-img" alt="Imagen 2">
+        <img src="../Icon/ILogin3.svg" class="carrusel-img" alt="Imagen 3">
+        <div class="carrusel-puntos">
+            <span class="punto active"></span>
+            <span class="punto"></span>
+            <span class="punto"></span>
+        </div>
     </div>
+</div>
 
+</div>
+    <script>
+let indice = 0;
+const imagenes = document.querySelectorAll('.carrusel-img');
+const puntos = document.querySelectorAll('.carrusel-puntos .punto');
+const total = imagenes.length;
+
+function mostrarImagen(i) {
+    imagenes.forEach((img, idx) => {
+        img.classList.toggle('active', idx === i);
+    });
+    puntos.forEach((p, idx) => {
+        p.classList.toggle('active', idx === i);
+    });
+    indice = i; // Actualiza el índice global
+}
+
+// Evento para hacer clic en los puntos
+puntos.forEach((punto, idx) => {
+    punto.addEventListener('click', () => {
+        mostrarImagen(idx);
+    });
+});
+
+setInterval(() => {
+    let nuevo = (indice + 1) % total;
+    mostrarImagen(nuevo);
+}, 6000);
+
+mostrarImagen(indice);
+</script>
+</script>
     <script>
         function addToPassword(num) {
             var passwordInput = document.getElementById('passwordInput');
@@ -136,6 +180,6 @@
             language-code="es"
         ></df-messenger>
     </div>
-
+    
 </body>
 </html>
