@@ -68,7 +68,13 @@
     
     <!-- Incluir el PHP que genera las pestañas y el contenido -->
     <?php include '../../Scripts/Admin_Scripts/listarSessiones.php'; ?>
+     <ul class="tab-header">
+        <?php generarPestanas($sesionesData); ?>
+    </ul>
 
+    <div class="tab-content">
+        <?php generarContenido($sesionesData); ?>
+    </div>
     <script>
     function cambiarPestana(tabId) {
         // Ocultar todas las pestañas
