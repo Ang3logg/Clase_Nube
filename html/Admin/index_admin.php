@@ -38,7 +38,7 @@
     <div class="AC_RAPIDO">
         <a href="RegistroAlumno.php">USUARIOS</a>
         <a href="RegistroCursos.php">CURSOS</a>
-        
+        <a href="../signup.html">CREACION DE USUARIO</a>
     </div>
 
     <div class="cursos_f">
