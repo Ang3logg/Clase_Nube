@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Datos de conexión a la base de datos MySQL
-$host = "localhost";
+$host = "127.0.0.1";
 $user = "root";
 $password = ""; // En XAMPP suele estar vacío
 $database = "clasenube_db"; // Cambialo si usás otro nombre de BD

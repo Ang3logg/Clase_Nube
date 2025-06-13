@@ -11,7 +11,7 @@ body {
     color: #fff;
 }
 input[type=submit] {
-    background-color: #4CAF50; /* Color de fondo */
+    background-color: #ff0505; /* Color de fondo */
     color: white; /* Color del texto */
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin borde */
@@ -22,12 +22,12 @@ input[type=submit] {
 
 /* Estilo cuando el cursor pasa por encima del botón */
 input[type=submit]:hover {
-    background-color: #45a049; /* Color de fondo más oscuro */
+    background-color: #031192; /* Color de fondo más oscuro */
 }
 
 /* Estilo cuando se presiona el botón */
 input[type=submit]:active {
-    background-color: #3e8e41; /* Color de fondo aún más oscuro */
+    background-color: #031192; /* Color de fondo aún más oscuro */
 }
 
 /* Estilos para el contenedor principal del curso */
@@ -185,7 +185,7 @@ button:focus {
 
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #B03A2E; /* Rojo */
+    background-color: #ff1900; /* Rojo */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -302,7 +302,7 @@ button:focus {
 /* Estilos para los botones */
 button {
     padding: 12px 24px;
-    background-color: #ff5c5c;
+    background-color: #ff0000;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -355,7 +355,7 @@ button:focus {
 
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #B03A2E; /* Rojo */
+    background-color: #ff1900; /* Rojo */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -437,22 +437,22 @@ button:focus {
 }
 
 .tab-header li.active {
-    background-color: #ff5c5c;
+    background-color: #ff0000;
     font-weight: bold;
     box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-    border-color: #ff5c5c;
+    border-color: #ffffff;
     z-index: 1;
 }
 
 .tab-header li:hover {
     background-color: #444;
     transform: translateY(-2px);
-    border-color: #ff5c5c;
+    border-color: #ff0000;
     animation: changeColor 1.5s infinite; /* Animación de cambio de color */
 }
 
 .tab-content {
-    border: 2px solid #ff5c5c;
+    border: 2px solid #ffffff;
     border-top: none;
     border-radius: 0 0 10px 10px;
     padding: 20px;

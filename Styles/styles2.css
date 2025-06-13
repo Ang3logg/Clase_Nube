@@ -21,7 +21,7 @@ body {
 
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #B03A2E; /* Rojo */
+    background-color: #ff1900; /* Rojo */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +62,7 @@ body {
 
 body .titulo {
     font-size: 40px;
-    color: white;
+    color: rgb(255, 0, 0);
     margin-bottom: 20px;
     text-decoration: none;
 }
