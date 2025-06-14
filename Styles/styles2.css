@@ -50,6 +50,7 @@ body {
 .nav-links li a {
     text-decoration: none;
     color: white;
+    font-weight: bold; /* <--- Solo añade esta línea */
 }
 
 /* Estilos para el contenedor principal */
@@ -62,11 +63,17 @@ body {
 
 body .titulo {
     font-size: 40px;
+<<<<<<< Updated upstream
     color: white;
+=======
+    color: rgb(255, 255, 255);
+>>>>>>> Stashed changes
     margin-bottom: 20px;
     text-decoration: none;
 }
-
+h1.titulo {
+  font-weight: bold;
+}
 .descripcion {
     font-size: 18px;
 }

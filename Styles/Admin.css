@@ -127,17 +127,20 @@ main {
 .contenedorUS {
     background-color: rgba(255, 255, 255, 0.781);
     padding: 3%;
-    box-shadow: 0px 0px 20px #ffffffb0;
+    box-shadow: 0px 0px 20px #ffffff;
 }
 
 .titulo {
     color: white;
 }
-
 .descripcion {
+<<<<<<< Updated upstream
     color: white;
+=======
+  font-size: 16px; /* Ajusta el tamaño como prefieras */
+  color: #ff0000;    /* Un gris oscuro, más suave que el negro puro */
+>>>>>>> Stashed changes
 }
-
 .logo {
     color: white;
 }
