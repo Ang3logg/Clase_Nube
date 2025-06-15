@@ -1,9 +1,11 @@
+/* Contenido para el archivo: Admin.css (CORREGIDO) */
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html, body {
@@ -11,147 +13,226 @@ html, body {
     margin: 0;
 }
 
+/* 1. FONDO DE PÁGINA EN BLANCO */
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #1a1a1a;
-    color: #fff;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #f4f7fc !important; /* Un blanco ligeramente suave para la vista */
+    min-height: 100vh !important;
+    color: #333 !important;
 }
 
-header {
-    background-color: #B03A2E;
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* 2. HEADER CON EL DEGRADADO MORADO */
+header,
+body header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 1rem 0 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    position: relative !important;
+    border-bottom: none !important;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    background-color: transparent !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 2rem !important;
+    box-shadow: none !important;
 }
 
-.logo h1 {
-    margin: 0;
-    animation: glow 1.5s infinite alternate;
+.navbar .logo h1 {
+    margin: 0 !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(45deg, #fff, #a8edea) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: glow 2s ease-in-out infinite alternate !important;
 }
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #b60202, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ac0000, 0 0 30px #910000, 0 0 35px #970b00b6;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
     }
     to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #00509e, 0 0 30px #00509e, 0 0 40px #00509e, 0 0 50px #00509e, 0 0 60px #00509e, 0 0 70px #00509e;
+        filter: drop-shadow(0 0 20px rgba(168, 237, 234, 0.6));
     }
-}
-
-.nav-links {
-    list-style: none;
-    text-decoration: none;
-    display: flex;
-}
-
-.nav-links li {
-    text-decoration: none;
-    margin-left: 2rem;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s, transform 0.3s;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
 }
 
 .nav-links a:hover {
-    background-color: #0023be;
-    border-radius: 5px;
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2) !important;
 }
 
 main {
-    flex: 1;
-    text-align: center;
-    padding: 2rem;
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 2rem 1rem !important;
+}
+
+/* 3. CONTENEDORES PRINCIPALES CON DEGRADADO MORADO */
+main .contenedor,
+main .cursos_f {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    color: white !important;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+main .contenedor {
+    margin-bottom: 2rem;
 }
 
 .titulo {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 2s;
+    font-size: 3rem !important;
+    margin-bottom: 1rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(45deg, #fff, #a8edea, #fed6e3) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: fadeInUp 1s ease !important;
 }
 
 .descripcion {
-    font-size: 1.2rem;
-    color: #aaa;
-    animation: fadeIn 2s 0.5s backwards;
+    font-size: 1.3rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 2rem !important;
+    animation: fadeInUp 1s ease 0.2s backwards !important;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .AC_RAPIDO {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    margin: 3rem 0 !important;
+    flex-wrap: wrap !important;
 }
 
+/* 4. ESTILO ORIGINAL DE LOS BOTONES RESTAURADO */
 .AC_RAPIDO a {
-    text-decoration: none;
-    color: #fff;
-    margin: 1%;
-    text-transform: none;
-    text-decoration: none;
-    display: flex;
-    padding: 15px 30px;
-    background-color: #b40000;
-    box-shadow: 0px 0px 10px #f048487a;
-    border-radius: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    text-decoration: none !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.2rem 2.5rem !important;
+    background: linear-gradient(45deg, #667eea, #764ba2) !important; /* Gradiente original */
+    border-radius: 50px !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important; /* Borde original */
+    transition: all 0.4s ease !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important; /* Sombra original */
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.AC_RAPIDO a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.AC_RAPIDO a:hover::before {
+    left: 100%;
 }
 
 .AC_RAPIDO a:hover {
-    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.801);
-    background-color: rgb(255, 0, 0);
-    transform: scale(1.1);
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
-.contenedorUS {
-    background-color: rgba(255, 255, 255, 0.781);
-    padding: 3%;
-    box-shadow: 0px 0px 20px #ffffff;
+/* -- FIN DE LA RESTAURACIÓN DE BOTONES -- */
+
+.cursos_f .container {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
-.titulo {
-    color: white;
+.cursos_f .titulo {
+    font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
 }
-.descripcion {
-<<<<<<< Updated upstream
-    color: white;
-=======
-  font-size: 16px; /* Ajusta el tamaño como prefieras */
-  color: #ff0000;    /* Un gris oscuro, más suave que el negro puro */
->>>>>>> Stashed changes
+
+.row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    justify-content: center !important;
 }
-.logo {
-    color: white;
+
+.card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-img-top {
+    height: 200px !important;
+    object-fit: cover !important;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5)) !important;
+}
+
+.card-body, .card-title, .card-text {
+    color: white !important;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #8e96ff, #ac85ff) !important;
+    border: none !important;
 }
 
 footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    position: relative;
-    width: 100%;
-    bottom: 0;
+    background: #343a40 !important; /* Un footer oscuro y sólido queda bien con fondo blanco */
+    color: white !important;
+    text-align: center !important;
+    padding: 2rem 0 !important;
+    margin-top: 2rem !important;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .navbar { flex-direction: column !important; gap: 1rem !important; padding: 1rem !important; }
+    main .contenedor, main .cursos_f { padding: 2rem 1rem; }
+    .AC_RAPIDO { flex-direction: column !important; align-items: center !important; gap: 1rem !important; }
+    .AC_RAPIDO a { width: 280px !important; }
 }
