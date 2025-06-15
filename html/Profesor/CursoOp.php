@@ -21,9 +21,11 @@
             position: relative;
             width: 100%;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto;   
             overflow: hidden; /* Para asegurar que la sombra no se desborde */
-            box-shadow: 0px 0px 35px #63FF59 ;
+            background-color: #007bff; /* Fondo azul para el contenedor del video */
+            border-radius: 8px; /* Bordes redondeados opcionales */
+            padding: 8px; /* Espaciado interno opcional */
         }
 
         .video-container iframe,

@@ -19,17 +19,22 @@
             <li><a href="../Scripts/logout.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
-    <main>
-        <header>
-            <h1>Bienvenido!</h1>
-            <hr>
-            <div class="DatosPerfil">
-                <?php include '../Scripts/getProfileData.php'; ?>
+    <main class="main-content">
+        <div class="content-wrapper">
+            <header class="page-header">
+                <h1>Mis Datos Personales</h1>
+                <p class="subtitle">Administra tu información personal</p>
+            </header>
+            
+            <div class="profile-section">
+                <div class="DatosPerfil">
+                    <?php include '../Scripts/getProfileData.php'; ?>
+                </div>
+                <button class="btn-volver" onclick="window.location.href='index.php'">
+                    <span>← Volver al inicio</span>
+                </button>
             </div>
-        </header>
+        </div>
     </main>
-    <footer>
-        <a href="index.php">Volver al inicio</a>
-    </footer>
 </body>
 </html>

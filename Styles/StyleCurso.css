@@ -7,118 +7,162 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #fff;
+    background-color: #f8fafc;
+    color: #222;
+    min-height: 100vh;
 }
-input[type=submit] {
-    background-color: #4CAF50; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor tipo puntero al pasar por encima */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-}
-
-/* Estilo cuando el cursor pasa por encima del botón */
-input[type=submit]:hover {
-    background-color: #45a049; /* Color de fondo más oscuro */
+/* Barra de navegación */
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-bottom: 1px solid #e5e7eb;
 }
 
-/* Estilo cuando se presiona el botón */
-input[type=submit]:active {
-    background-color: #3e8e41; /* Color de fondo aún más oscuro */
+.logo h1, .logo a {
+    margin: 0;
+    color: #2563eb;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* Estilos para el contenedor principal del curso */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #2563eb;
+}
+
+/* Contenedor principal - SECCIÓN BLANCA MÁS GRANDE */
+.curso, .contenedor, .tab-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    padding: 40px; /* Aumentado de 32px */
+    margin: 32px auto;
+    max-width: 1200px; /* Aumentado de 950px */
+    min-height: 600px; /* Altura mínima para hacer la sección más grande */
+    border: 1px solid #e5e7eb;
+}
+
+h1.titulo, .contenedor .titulo, .curso .titulo, h1.titulo, h2.titulo {
+    text-align: center;
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
 .curso {
-    margin: 20px;
-    padding: 20px;
-    background-color: #222;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 32px auto;
+    padding: 40px; /* Aumentado */
 }
 
-.curso:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+.curso h2, .contenedor .titulo {
+    color: #2563eb;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.curso h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #ff5c5c;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.curso p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #ccc;
+.curso p, .contenedor .descripcion {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
 }
 
 .unidades {
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
-/* Estilos para las pestañas */
+/* Pestañas */
 .tab-header {
     list-style: none;
-    padding: 0;
     display: flex;
-    border-bottom: 2px solid #ff5c5c;
-    margin-bottom: 20px;
+    border-bottom: 2px solid #2563eb;
+    margin-bottom: 24px;
+    gap: 2px;
+    background: transparent;
+    margin-top: 24px;
 }
 
 .tab-header li {
-    padding: 10px 20px;
+    padding: 12px 28px;
     cursor: pointer;
-    border: 2px solid transparent;
+    background: #f1f5f9;
+    color: #222;
+    border: 1px solid #e5e7eb;
     border-bottom: none;
-    margin-right: -2px; /* Eliminar espacio entre pestañas */
-    background-color: #333;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
     position: relative;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .tab-header li.active {
-    background-color: #ff5c5c;
+    background: #2563eb !important;
+    color: #fff !important;
+    border-bottom: 2px solid #2563eb !important;
     font-weight: bold;
-    box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-    border-color: #ff5c5c;
-    z-index: 1; /* Asegura que las pestañas activas estén por encima del contenido */
+    z-index: 2;
+    transition: background 0.2s, color 0.2s;
 }
 
 .tab-header li:hover {
-    background-color: #444;
-    transform: translateY(-2px);
-    border-color: #ff5c5c;
+    background: #e0e7ef;
+    color: #2563eb;
 }
 
 .tab-header li .close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+    position: static;
+    margin-left: auto;
     cursor: pointer;
-    font-size: 14px;
-    color: #ccc;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.2s;
 }
 
-/* Estilos para el contenido de las pestañas */
+.tab-header li .close:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Contenido de pestañas */
 .tab-content {
-    border: 2px solid #ff5c5c;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    margin-top: -2px; /* Ajuste para alinear con el borde inferior de las pestañas */
-    background-color: #222;
+    border: 1px solid #e5e7eb;
+    border-radius: 0 0 16px 16px;
+    padding: 40px; /* Aumentado */
+    background: #f8fafc;
+    margin-top: -2px;
+    box-shadow: none;
+    min-height: 500px; /* Altura mínima */
 }
 
 .tab-pane {
@@ -129,397 +173,104 @@ input[type=submit]:active {
     display: block;
 }
 
-/* Estilos para los botones */
-button {
-    padding: 12px 24px;
-    background-color: #ff5c5c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(255, 92, 92, 0.4);
-}
-
-button:hover {
-    background-color: #ff3333;
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-}
-
-button:focus {
-    outline: none;
-}
-
-.agregar-sesion {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 14px;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #ff00ff;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.4);
-}
-
-.agregar-sesion:hover {
-    background-color: #ff00cc;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-}
-
-/* Estilos para el logo */
-.logo a {
-    text-transform: none;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-    background-color: #B03A2E; /* Rojo */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .logo h1 {
-    margin: 0;
-    color: #f1f1f1;
-}
-
-/* Estilos para los enlaces de navegación */
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centrar los elementos en dispositivos móviles */
-}
-
-.nav-links li {
-    margin-left: 20px;
-    margin-top: 10px; /* Añadido para espaciado vertical en móviles */
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Widget del chatbot */
-.chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes changeColor {
-    0% {
-        color: #ff5c5c;
-        text-shadow: 2px 2px 4px rgba(255, 92, 92, 0.8);
-    }
-    50% {
-        color: #00ffff;
-        text-shadow: 2px 2px 4px rgba(0, 255, 255, 0.8);
-    }
-    100% {
-        color: #ff5c5c;
-        text-shadow: 2px 2px 4px rgba(255, 92, 92, 0.8);
-    }
-}
-
-/* Estilos adicionales para efecto "Gamer" */
-.tab-header li {
-    background-color: #333;
-    border: 2px solid transparent;
-    border-bottom: none;
-    position: relative;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 18px;
-}
-
-.tab-header li.active {
-    background-color: #ff5c5c;
-    font-weight: bold;
-    box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-    border-color: #ff5c5c;
-    z-index: 1;
-}
-
-.tab-header li:hover {
-    background-color: #444;
-    transform: translateY(-2px);
-    border-color: #ff5c5c;
-    animation: changeColor 1.5s infinite; /* Animación de cambio de color */
-}
-
-.tab-content {
-    border: 2px solid #ff5c5c;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    margin-top: -2px; /* Ajuste para alinear con el borde inferior de las pestañas */
-    background-color: #222;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-/* Estilos para los botones */
-button {
-    padding: 12px 24px;
-    background-color: #ff5c5c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(255, 92, 92, 0.4);
-}
-
-button:hover {
-    background-color: #ff3333;
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-}
-
-button:focus {
-    outline: none;
-}
-
-.agregar-sesion {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 14px;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #ff00ff;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.4);
-}
-
-.agregar-sesion:hover {
-    background-color: #ff00cc;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-}
-
-/* Estilos para el logo */
-.logo a {
-    text-transform: none;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-    background-color: #B03A2E; /* Rojo */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .logo h1 {
-    margin: 0;
-    color: #f1f1f1;
-}
-
-/* Estilos para los enlaces de navegación */
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centrar los elementos en dispositivos móviles */
-}
-
-.nav-links li {
-    margin-left: 20px;
-    margin-top: 10px; /* Añadido para espaciado vertical en móviles */
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Widget del chatbot */
-.chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes changeColor {
-    0% {
-        color: #ff5c5c;
-        text-shadow: 2px 2px 4px rgba(255, 92, 92, 0.8);
-    }
-    50% {
-        color: #00ffff;
-        text-shadow: 2px 2px 4px rgba(0, 255, 255, 0.8);
-    }
-    100% {
-        color: #ff5c5c;
-        text-shadow: 2px 2px 4px rgba(255, 92, 92, 0.8);
-    }
-}
-
-/* Estilos adicionales para efecto "Gamer" */
-.tab-header li {
-    background-color: #333;
-    border: 2px solid transparent;
-    border-bottom: none;
-    position: relative;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 18px;
-}
-
-.tab-header li.active {
-    background-color: #ff5c5c;
-    font-weight: bold;
-    box-shadow: 0 8px 16px rgba(255, 92, 92, 0.6);
-    border-color: #ff5c5c;
-    z-index: 1;
-}
-
-.tab-header li:hover {
-    background-color: #444;
-    transform: translateY(-2px);
-    border-color: #ff5c5c;
-    animation: changeColor 1.5s infinite; /* Animación de cambio de color */
-}
-
-.tab-content {
-    border: 2px solid #ff5c5c;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    margin-top: -2px; /* Ajuste para alinear con el borde inferior de las pestañas */
-    background-color: #222;
-}
-
-/* Estilos para las sesiones dentro de las pestañas */
+/* Secciones */
 .sesion {
-    padding: 15px;
-    background-color: #333;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 18px;
+    background: #f1f5f9;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .sesion:hover {
-    background-color: #444;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background: #e0e7ef;
 }
 
-/* Texto dentro de las sesiones */
 .sesion p {
-    color: #ccc;
-    font-size: 16px;
+    color: #555;
+    font-size: 1rem;
 }
 
-/* Añadir media queries para responsividad */
-@media (max-width: 768px) {
-    .tab-header {
-        flex-direction: column;
-    }
-    
-    .tab-header li {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
+/* Botones */
+button, .agregar-sesion, input[type=submit], .custom-file-upload {
+    padding: 14px 0;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 12px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    text-transform: uppercase;
 }
 
-.form-section {
-    margin-bottom: 15px;
+button:hover, .agregar-sesion:hover, input[type=submit]:hover, .custom-file-upload:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.03);
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+input[type=submit] {
+    width: auto;
+    padding: 10px 24px;
+    margin-top: 0;
+    text-transform: none;
 }
 
+input[type=submit]:active {
+    background-color: #1e40af;
+}
+
+/* Subir archivos */
 .file-upload-container {
     display: flex;
     align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .custom-file-upload {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    margin-top: 0;
 }
 
 .custom-file-upload:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.custom-file-upload:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.custom-file-upload:hover:before {
+    left: 100%;
 }
 
 .file-input {
@@ -530,4 +281,56 @@ label {
     margin-left: 10px;
     font-size: 14px;
     color: #666;
+}
+
+/* Formularios */
+.form-section {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .curso, .contenedor, .tab-content {
+        max-width: 98vw;
+        padding: 18px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .curso, .contenedor, .tab-content {
+        padding: 10px;
+        margin: 10px;
+    }
+    .tab-header {
+        flex-direction: column;
+    }
+    .tab-header li {
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 2px;
+    }
 }

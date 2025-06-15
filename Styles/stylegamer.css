@@ -2,46 +2,41 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #fff;
-    background-color: #000;
-    background-image: url("https://trilce.ucv.edu.pe/images/1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
 }
 
 /* Estilos para el logo */
 .logo h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 28px;
     color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding-left: 50px;
 }
 
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: #970000; /* Azul oscuro con transparencia */
+    background-color: #0056b3; /* Azul institucional UCV */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px; /* Aumentamos el padding para hacer la barra más gruesa */
-    box-shadow: 0 4px 8px rgba(148, 0, 0, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #ffc107; /* Amarillo UCV */
 }
 
 .navbar:hover {
-    background-color: rgb(202, 0, 0); /* Azul oscuro sin transparencia */
-    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.815);
-    .logo h1 {
-        font-size: 40px; /* Aumentamos más el tamaño del texto */
-    }
+    background-color: #004494; /* Azul más oscuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .navbar:hover .logo h1 {
-    font-size: 40px; /* Aumentamos más el tamaño del texto */
+    font-size: 28px; /* Mantenemos el mismo tamaño */
 }
 
 /* Estilo para los enlaces de navegación */
@@ -53,88 +48,120 @@ body {
 }
 
 .nav-links li {
-    margin-left: 30px; /* Aumentamos el espacio entre los elementos */
+    margin-left: 30px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #fff;
-    font-size: 20px; /* Aumentamos el tamaño del texto */
-    transition: color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
 }
 
 .nav-links li a:hover {
-    color: #ffffff;
-    font-size: 20.2px;
-
-    text-shadow: 0px 0px 18px #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: none;
+    font-size: 16px;
 }
 
 /* Estilos para el contenedor principal */
 .contenedor {
     text-align: center;
-    padding: 50px;
-    color: #fff;
+    padding: 40px;
+    background: white;
+    margin: 40px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
 .contenedor .titulo {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #ffffff; /* Rosa */
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
 }
 
 .contenedor .descripcion {
-    font-size: 18px;
-    color: #ccc;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Estilos para la sección de cursos */
-.cursos {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
+.cursos_f {
+    background: white;
+    padding: 40px 0;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.curso {
-    background-color: #80cbc4; /* Verde azulado */
-    padding: 20px;
+.container {
+    padding: 0 20px;
+}
+
+.MisCursos {
+    color: #0056b3;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ffc107;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+}
+
+/* Estilos para las tarjetas de curso (asumiendo que se generan con Bootstrap) */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    border: none;
     border-radius: 8px;
-    text-align: center;
-    flex: 1 1 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-.MisCursos{
-    color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.curso:hover {
-    background-color: #4db6ac; /* Verde azulado más oscuro */
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.curso h2 {
-    color: #fff;
-    font-size: 24px;
+.card-header {
+    background-color: #0056b3;
+    color: white;
+    font-weight: 500;
 }
 
-.curso p {
-    color: #ccc;
+.card-body {
+    padding: 20px;
+    background: #f8f9fa;
 }
 
 /* Estilos para el pie de página */
 footer {
-    background-color: #1a237e; /* Azul oscuro */
+    background-color: #0056b3;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    font-size: 14px;
+    border-top: 3px solid #ffc107;
 }
 
 /* Efecto de desplazamiento del chatbot */
@@ -145,34 +172,37 @@ footer {
     z-index: 9999;
 }
 
-/* Animación para los botones y efectos de hover */
-.botonC {
-    width: 100%;
-    background-color: #ff4081; /* Rosa */
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+/* Botones */
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
-.botonC:hover {
-    background-color: #ff80ab; /* Rosa más claro */
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.5);
+.btn-primary:hover {
+    background-color: #004494;
+    border-color: #004494;
 }
 
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: center;
-        padding: 10px;
+        padding: 15px;
     }
 
     .nav-links {
+        margin-top: 15px;
         flex-direction: column;
         align-items: center;
     }
@@ -183,10 +213,19 @@ footer {
     }
 
     .contenedor {
-        padding: 20px;
+        padding: 20px 15px;
+        margin: 15px;
     }
 
-    .curso {
-        flex: 1 1 45%;
+    .contenedor .titulo {
+        font-size: 24px;
+    }
+
+    .contenedor .descripcion {
+        font-size: 16px;
+    }
+
+    .MisCursos {
+        font-size: 22px;
     }
 }

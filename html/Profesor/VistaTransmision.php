@@ -42,6 +42,10 @@
         <button id="stopRecordButton" disabled>Detener y Guardar</button>
     </div>
 
+    <button type="button" class="btn-regresar" onclick="window.history.back();">
+        ← Regresar
+    </button>
+
     <!-- Mensajes de carga y finalización -->
     <div class="messages">
         <div id="loadingMessage" style="display: none;">
