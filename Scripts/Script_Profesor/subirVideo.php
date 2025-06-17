@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sesion_id']) && isset
 
         if (move_uploaded_file($video["tmp_name"], $target_file)) {
             // Guardar en MySQL
-            $stmt = $conn->prepare("UPDATE sesiones SET video = ? WHERE id = ? AND curso_id = ?");
+            $stmt = $conn->prepare("INSERT INTO videos (ruta_video, id, sesion_id) VALUES (?, ?, ?)");
             $stmt->bind_param("sii", $video_url, $sesion_id, $curso_id);
 
             if ($stmt->execute()) {
