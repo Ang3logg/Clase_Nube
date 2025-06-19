@@ -2,8 +2,8 @@
 include '../../Scripts/Config.php';
 include '../../Scripts/firebaseRDB.php';
 
-// Crear una instancia del objeto de Firebase
-$rdb = new firebaseRDB($databaseURL);
+// Crear una instancia del objeto de Firebase//
+//$rdb = new firebaseRDB($databaseURL);
 
 // Verificar si se ha enviado el ID del curso a eliminar
 if(isset($_GET['id'])) {
