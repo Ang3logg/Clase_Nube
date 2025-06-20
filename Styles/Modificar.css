@@ -1,75 +1,206 @@
-/* styles.css */
+/* Modificar.css - Versión Moderna */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #3e81ee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
 }
 
 .contenedor {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.contenedor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2d3748;
+    margin-bottom: 30px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 input[type="text"], 
 input[type="email"], 
 select {
     font-size: 16px;
-    padding: 10px;
+    padding: 15px 20px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    width: 100%;
 }
 
 input[type="text"]:focus, 
 input[type="email"]:focus, 
 select:focus {
-    border-color: #4285f4;
+    border-color: #667eea;
     outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+select:hover {
+    border-color: #cbd5e0;
 }
 
 input[type="submit"] {
-    background-color: #4285f4;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 15px 25px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    margin-top: 10px;
 }
 
 input[type="submit"]:hover {
-    background-color: #357ae8;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+input[type="submit"]:active {
+    transform: translateY(-1px);
 }
 
 select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
-    background-size: 12px;
+    background: white url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center;
+    background-size: 20px;
+    padding-right: 50px;
+    cursor: pointer;
 }
 
 select::-ms-expand {
     display: none;
+}
+
+/* Estilos para checkboxes si existen */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+/* Estilos para labels de checkbox */
+label {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: white;
+    text-align: left;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+label:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 30px 20px;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    input[type="text"], 
+    input[type="email"], 
+    select,
+    input[type="submit"] {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+    
+    .contenedor {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
 }
