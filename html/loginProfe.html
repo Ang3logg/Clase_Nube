@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASENUBE UCV - Docentes</title>
+    <link rel="stylesheet" href="../Styles/logindocentes.css">
+    <link rel="stylesheet" href="../Styles/fonts.css">
+    <link rel="stylesheet" href="OlvidoContrasena.html">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="universidad-logo">
+        
+        </div>
+        <form class="formulario" action="../Scripts/ingresar.php" method="post">
+           <h1 class="titulo">Acceso Docentes</h1>
+            <div class="campos">
+                <div class="campo">
+                    <input
+                        type="email"
+                        placeholder="Correo institucional"
+                        required
+                        id="email"
+                        name="email"
+                    >
+                </div>
+                
+                <div class="campo">
+                    <input 
+                        type="password" 
+                        placeholder="Contraseña" 
+                        id="contra"
+                        name="contra"
+                        required
+                    >
+                </div>
+
+                <input type="submit" value="Ingresar">
+                <a href="OlvidoContrasena.html" class="enlace-olvido">¿Olvidó su contraseña?</a>
+            </div>
+        </form>
+    </div>
+
+    
+    <script>
+        window.onload = function() {
+            var menuLinks = document.querySelectorAll('#menuLinks a');
+            menuLinks.forEach(function(link) {
+                link.disabled = true;
+            });
+        };
+    </script>
+
+    <div class="chatbot">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+        chat-title="Robot de Clase Nube"
+        agent-id="7526d9c7-1a5a-45b8-aa9c-f8208e3b4ff7"
+        language-code="es"
+        ></df-messenger>
+    </div>
+</body>
+</html>
